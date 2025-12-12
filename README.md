@@ -42,10 +42,21 @@ Options:
 An example to build and query BigSig database
 ```bash
 bigsig construct -r ref_file_example.txt -b test -k 31 -mv 21 -s 10000000 -n 4 -t 24
-bigsig query -b ./test.mxi  -q ./test_data/test.fastq.gz 
 bigsig identify -b test.mxi -q ./test_data/test.fastq.gz -n output -t 24 --high_mem_load
 
 ```
+
+input format (gzippped or not for the file):
+
+```bash
+### ref_file_example.txt
+Salmonella_enterica_salamae_VIII_74-1880	./refs/74_1880.fasta
+Salmonella_enterica_salamae_b_Ar0560	./refs/Ar0560.fasta
+Salmonella_enterica_houtenae_Type	./refs/NCTC10401.fasta
+Salmonella_bongori_Type-NCTC12419	./refs/S_bongoriType_NCTC12419.fasta
+```
+
+
 ## Results
 With the default settings BigSiq will report reference sequences that share >35% of their k-mers with the query. Here is the output of a query with SRA reference SRR4098796 (L. monocytogenes lineage I) as query:
 ```
