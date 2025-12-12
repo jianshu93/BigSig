@@ -5,8 +5,8 @@ This crate implements **BI**tsliced **G**enomic **SIG**nature Index (BIGSI) for 
 Some key functionalities:
 1. Use [xxh3](https://crates.io/crates/xxh3) to suport aarch64 and x86-64 platforms;
 2. Use [needletail](https://crates.io/crates/needletail) for fast and compressed fasta/fastq file processing;
-3. 2-bit nucleitide sequence representation via NtHash; 
-4. use simd-minimizers for SIMD support minimizer computation
+3. 2-bit nucleitide sequence representation via [NtHash](https://crates.io/crates/nthash); 
+4. use [simd-minimizers](https://crates.io/crates/simd-minimizers) for SIMD support minimizer computation
 
 ## Install
 ```bash
