@@ -1,0 +1,35 @@
+[package]
+name = "bigsig"
+version = "0.3.2"
+authors = ["Jianshu Zhao"]
+##repository = "https://gitlab.com/Jianshu_Zhao/bigsig"
+keywords = ["sequence_search", "bigsi"]
+edition = "2024"
+license = "MIT"
+description = "Large-scale Sequence Search with BItsliced Genomic Signature Index (BIGSIG)"
+
+[dependencies]
+clap = "4.5.0"
+bit-vec_serde = "0.6.0"
+xxh3 = "0.1.1"
+serde = "^1.0.89"
+serde_json = "1.0"
+bincode = "^1.1.2"
+serde_derive = "1.0"
+indexmap = "1.0.0"
+probability = "0.15.12"
+rayon = "1.11.0"
+flate2 = "1.1.5"
+fnv = "1.0.6"
+systemstat = "0.1.3"
+log = { version = "0.4" }
+env_logger = { version = "0.11" }
+needletail = "0.6.3"
+packed-seq = "4.3.0"
+seq-hash = "0.1" 
+simd-minimizers = "2.2.0"
+
+
+[profile.release]
+lto = true
+
