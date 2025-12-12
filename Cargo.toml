@@ -2,7 +2,7 @@
 name = "bigsig"
 version = "0.3.2"
 authors = ["Jianshu Zhao"]
-##repository = "https://gitlab.com/Jianshu_Zhao/bigsig"
+##repository = "https://github.com/jianshu93/BigSig"
 keywords = ["sequence_search", "bigsi"]
 edition = "2024"
 license = "MIT"
