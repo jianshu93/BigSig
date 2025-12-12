@@ -10,7 +10,7 @@ Some key functionalities:
 
 ## Install
 ```bash
-git clone https://gitlab.com/Jianshu_Zhao/bigsig
+git clone https://github.com/jianshu93/BigSig.git
 cd bigsig
 ### NEON and AVX2 can be used for fast minimizer computation
 RUSTFLAGS="-C target-cpu=native" cargo build --release
