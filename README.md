@@ -7,6 +7,7 @@ Some key functionalities:
 2. Use [needletail](https://crates.io/crates/needletail) for fast and compressed fasta/fastq file processing;
 3. 2-bit nucleitide sequence representation via [NtHash](https://crates.io/crates/nthash); 
 4. use [simd-minimizers](https://crates.io/crates/simd-minimizers) for SIMD support minimizer computation
+5. BIGSI idea from [here](https://crates.io/crates/bigsi_rs)
 
 ## Install
 ```bash
@@ -73,6 +74,7 @@ Interpretation:
 The identify command writes one line per read (or read pair) with six tab-separated fields: the read ID, an assignment/status (either a single reference, a comma-separated list of references, or special values like no_hits, no_significant_hits, or too_short), the number of supporting kmers/minimizers for the top hit(s), the total number of k-mers/minimizers used from that read after masking/down-sampling, a decision flag (accept or reject), and finally the number of tied top hits. Conceptually, accept means “this line is usable as-is for downstream counting”: either the read has a unique, statistically significant best match to one reference, or it has no hits / is too short but is still a clean, unambiguous outcome. In contrast, reject marks reads where the evidence is ambiguous or unreliable — either multiple references tie for the top score, or no hit passes the false-positive correction — so these are grouped together as “reject” in the summary counts rather than being credited to any specific reference.
 
 BIGSIG models and controls Bloom-filter false positives for each reference in the index. For every reference, BIGSIG computes its theoretical Bloom filter false positive rate from the filter length, number of hash functions, and the number of kmers/minimizers stored for that reference, using the standard approximation for Bloom filters. During classification, the algorithm asks: “If this reference were not truly present, how many k-mer hits would I expect to see just from Bloom filter false positives?” and evaluates this with a binomial model. The --fp_correct parameter sets a per-read significance threshold on this probability (as −log10 p; the default 3.0 corresponds to p = 10⁻³). A read is marked accept only if its top hit has more supporting kmers/minimizers than expected under the false-positive-only model at this threshold; otherwise the read is labeled reject (including ambiguous multi-hit cases). In practice, BIGSIG indices are typically configured so the per-k-mer Bloom false positive rate is on the order of 10⁻³ or lower, and because each read contributes many independent kmers/minimizers, the effective per-read false positive rate is usually orders of magnitude smaller than the underlying Bloom filter rate.
+
 
 
 
