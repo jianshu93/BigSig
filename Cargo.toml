@@ -1,6 +1,6 @@
 [package]
 name = "bigsig"
-version = "0.3.2"
+version = "0.3.3"
 authors = ["Jianshu Zhao"]
 repository = "https://github.com/jianshu93/BigSig.git"
 keywords = ["sequence_search", "bigsi"]
