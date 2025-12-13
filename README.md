@@ -10,6 +10,15 @@ Some key functionalities:
 5. BIGSI idea from [here](https://crates.io/crates/bigsi_rs)
 
 ## Install
+### Pre-compliled binary
+
+```bash
+wget 
+
+```
+
+
+### Complile from source
 ```bash
 git clone https://github.com/jianshu93/BigSig.git
 cd bigsig
@@ -20,7 +29,6 @@ RUSTFLAGS="-C target-cpu=native" cargo build --release
 
 ## Usage
 ```bash
-
 ************** initializing logger *****************
 
 Large-scale Sequence Search with BItsliced Genomic Signature Index (BIGSIG)
@@ -29,17 +37,14 @@ Usage: bigsig [COMMAND]
 
 Commands:
   construct  Construct a BIGSIG
-  query      Query a BIGSIG on one or more fasta/fastq.gz files
   identify   Identify reads based on probability
   help       Print this message or the help of the given subcommand(s)
 
 Options:
   -h, --help     Print help
   -V, --version  Print version
-
-
-
 ```
+
 An example to build and query BigSig database
 ```bash
 bigsig construct -r ref_file_example.txt -b test -k 31 -mv 21 -s 10000000 -n 4 -t 24

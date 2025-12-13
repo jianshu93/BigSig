@@ -7,9 +7,7 @@ pub mod read_id_mt_pe;
 
 pub mod read_id_batch;
 
-pub mod perfect_search;
 
-pub mod batch_search_pe;
 
 pub mod kmer;
 
