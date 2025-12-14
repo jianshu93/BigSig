@@ -15,7 +15,7 @@ Some key functionalities:
 ```bash
 wget https://github.com/jianshu93/BigSig/releases/download/v0.3.1/bigsig_Linux_x86-64_v0.3.1.zip
 unzip bigsig_Linux_x86-64_v0.3.1.zip
-chmod a=x ./bigsig
+chmod a+x ./bigsig
 ./bigsig -h
 ```
 
